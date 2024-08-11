@@ -19,6 +19,11 @@ export default defineNuxtConfig({
     '@primevue/nuxt-module',
   ],
   primevue: {
+    // [bug] autoImport logic is inverted
+    // @see https://github.com/primefaces/primevue/issues/6187
+    // @todo: remove when fixed
+    autoImport: false,
+
     components: {
       prefix: 'P',
     },

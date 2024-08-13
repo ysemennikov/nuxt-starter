@@ -18,6 +18,9 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@primevue/nuxt-module',
   ],
+  tailwindcss: {
+    cssPath: false,
+  },
   primevue: {
     // [bug] autoImport logic is inverted
     // @see https://github.com/primefaces/primevue/issues/6187
@@ -30,6 +33,12 @@ export default defineNuxtConfig({
     options: {
       theme: {
         preset: Aura,
+        options: {
+          cssLayer: {
+            name: 'primevue',
+            order: 'tailwind-base, primevue, primevue-custom, tailwind-utilities',
+          },
+        },
       },
     },
   },

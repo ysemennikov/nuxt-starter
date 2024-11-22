@@ -3,6 +3,16 @@
 import Aura from '@primevue/themes/aura';
 
 export default defineNuxtConfig({
+  alias: {
+    '@': '~/src',
+  },
+
+  dir: {
+    assets: 'src/assets',
+    layouts: 'src/layouts',
+    pages: 'src/pages',
+  },
+
   app: {
     head: {
       title: 'Nuxt Boilerplate',
@@ -13,7 +23,7 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  css: ['~/assets/css/main.css'],
+  css: ['~/src/assets/css/main.css'],
   modules: [
     '@nuxtjs/tailwindcss',
     '@primevue/nuxt-module',
@@ -25,8 +35,9 @@ export default defineNuxtConfig({
     // [bug] autoImport logic is inverted
     // @see https://github.com/primefaces/primevue/issues/6187
     // @todo: remove when fixed
-    autoImport: false,
-
+    // updated: setting "autoImport: false" has error after update nuxt to 3.14.1592 version
+    // updated: if using prefix in components, created components.d.ts file of root directory
+    // autoImport: false,
     components: {
       prefix: 'P',
     },

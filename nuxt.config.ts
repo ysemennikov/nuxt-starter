@@ -11,6 +11,12 @@ export default defineNuxtConfig({
     layoutTransition: { name: 'layout', mode: 'out-in' },
   },
 
+  dir: {
+    pages: 'src/pages',
+    layouts: 'src/layouts',
+    app: 'src/app',
+  },
+
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
@@ -22,11 +28,6 @@ export default defineNuxtConfig({
     cssPath: false,
   },
   primevue: {
-    // [bug] autoImport logic is inverted
-    // @see https://github.com/primefaces/primevue/issues/6187
-    // @todo: remove when fixed
-    autoImport: false,
-
     components: {
       prefix: 'P',
     },

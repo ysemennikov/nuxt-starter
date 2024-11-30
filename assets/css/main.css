@@ -1,0 +1,29 @@
+@layer tailwind-base, primevue, primevue-custom, tailwind-utilities;
+
+@layer primevue-custom {
+  .p-toast {
+    max-width: calc(100vw - 40px);
+  }
+}
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
+
+.page-enter-active,
+.page-leave-active,
+.layout-enter-active,
+.layout-leave-active {
+  transition: all 0.3s;
+}
+.page-enter-from,
+.page-leave-to,
+.layout-enter-from,
+.layout-leave-to {
+  opacity: 0;
+}
